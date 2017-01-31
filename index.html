@@ -16,16 +16,16 @@
 			<source src="videos/video.mp4" type="video/mp4" />
          	<source src="videos/video.ogg" type="video/ogg" />  
 
-         	<track label="English" kind="subtitles" srclang="en" src="subtitles/captions.vtt" default />
+         	<!-- <track label="English" kind="subtitles" srclang="en" src="subtitles/captions.vtt" default /> -->
 		</video>
 		<div class="control-bar clearfix">
 			<div id="video-controls" class="controls" data-state="hidden">
-					<div class="progress">
+					<div id="progress-p" class="progress">
 						<progress id="progress" value="0">
 								<span id="progress-bar"></span>
 						</progress>
 					</div>	
-					<div class="button-controls"> 
+					<div id="control-bar" class="button-controls"> 
 						<button id="playpause" type="button" data-state="play">Play/Pause</button>
 						<span id="curTime">00</span>/<span id="vLen"></span>
 						<button id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
@@ -37,19 +37,56 @@
 	</figure>
 	<div id="content">
 		
-			<p>
-				Aliquam aliquam nulla elementum venenatis consectetur. Vivamus auctor orci sed velit laoreet, et dignissim arcu convallis. Nunc in sem vitae eros lobortis laoreet. In volutpat ex dapibus, hendrerit tellus ac, placerat urna. Ut non aliquet dui. Cras placerat diam non eros mollis, sit amet placerat sapien malesuada. Aenean venenatis magna non elit ultrices pulvinar. Cras libero eros, molestie vitae volutpat sit amet, vehicula vel ipsum. Ut egestas, leo at efficitur feugiat, dui augue euismod dolor, nec tristique sapien lorem vel felis. Donec ut lacinia dolor. Donec in orci condimentum, efficitur tortor vel, sollicitudin lacus. Aliquam quis pretium orci. Nunc semper eros dui. Nullam porta sagittis elementum. Vivamus vel imperdiet felis. Maecenas fermentum massa magna. Curabitur non libero accumsan, pellentesque purus id, elementum orci. Nam at consectetur urna, nec pharetra nulla. Cras accumsan venenatis nisl egestas mollis. Mauris arcu felis, elementum eu metus vitae, accumsan imperdiet odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget porta orci, ac varius dui. Praesent maximus tortor id lectus vulputate vestibulum vitae quis enim. Nulla tempus elit id ipsum elementum, venenatis pellentesque orci varius.
+			<p data-tmin = '00.240' data-tmax ="04.130">
+				Now that we've looked at the architecture of the internet, let's see how you might
 			</p>
-			<p>
-				Nam ut nibh non risus mollis iaculis. Aenean fringilla eleifend neque, ac placerat orci efficitur ut. Praesent bibendum est id purus fringilla aliquam. In bibendum non orci vitae tincidunt. Duis pellentesque commodo lobortis. Sed sagittis, est convallis ultricies suscipit, dolor lectus semper urna, et venenatis mauris mauris vitae magna. Cras ac tincidunt sapien. Nunc pharetra dolor a imperdiet congue. Nam quis velit a felis convallis accumsan eu id dolor. Praesent quis aliquam orci, vel facilisis orci.</p>
-			<p>
-				Pellentesque vel risus eget odio tristique malesuada. Etiam sit amet libero et leo condimentum vulputate sit amet sit amet turpis. Aenean sed condimentum nunc, sit amet mattis urna. Donec lacinia imperdiet quam, id aliquet augue lobortis nec. Curabitur porttitor, massa at ultricies mattis, libero urna consequat ex, nec efficitur velit ex a mi. Curabitur congue blandit imperdiet. Praesent vehicula ultricies velit, ac pharetra ligula sollicitudin non.
+			<p data-tmin = '04.130' data-tmax ="07.535">
+				connect your personal devices to the internet inside your house.
 			</p>
-			<p>
-				Pellentesque hendrerit nunc vitae magna pellentesque tempus at gravida lorem. Ut scelerisque, lectus non bibendum feugiat, urna augue pellentesque ex, vitae sollicitudin est sapien quis neque. Curabitur volutpat mi diam, eget rutrum lectus sodales in. Pellentesque volutpat erat sed malesuada cursus. Vivamus rhoncus metus vehicula arcu convallis mollis sed sed eros. Pellentesque tempus vestibulum congue. Phasellus sit amet ex purus. Fusce vel nisl luctus, fermentum ligula tempus, rutrum dui. Quisque feugiat purus id ligula scelerisque pharetra. Ut magna nulla, congue id blandit ut, gravida tincidunt turpis. Maecenas ut nisi in velit vehicula hendrerit. Nulla nisi velit, fringilla sit amet bibendum vitae, tempus ac enim. Integer auctor commodo lorem, congue venenatis felis. In hac habitasse platea dictumst. Mauris tortor ex, mollis vitae ultrices non, laoreet nec metus. Nulla facilisi.
+			<p data-tmin = '07.535' data-tmax ="11.270">
+				Well there are many ways to connect to the internet, and
 			</p>
-			<p>
-				Cras molestie velit sed vestibulum vestibulum. Fusce tincidunt tempus nunc eu rhoncus. Nunc convallis velit non massa cursus, ut semper quam blandit. Etiam suscipit velit leo, vitae accumsan eros auctor at. Praesent vel elit eu nibh rhoncus rutrum. Suspendisse bibendum nisl convallis metus viverra, nec aliquet libero pretium. Curabitur sed blandit felis. Fusce vehicula purus blandit dolor tristique auctor. Aenean quis sagittis neque. 
+			<p data-tmin = '11.270' data-tmax ="13.960">
+				most often people connect wirelessly.
+			</p>
+			<p data-tmin = '13.960' data-tmax ="17.940">
+				Let's look at an example of how you can connect to the internet.
+			</p>
+			<p data-tmin = '17.940' data-tmax ="22.370">
+				If you live in a city or a town, you probably have a coaxial cable for
+			</p>
+		
+			<p data-tmin = '22.370' data-tmax ="26.880">
+				cable Internet, or a phone line if you have DSL, running to the outside of
+			</p>
+			
+			<p data-tmin = '26.880' data-tmax ="30.920">
+				your house, that connects you to the Internet Service Provider, or ISP.
+			</p>
+			<p data-tmin = '32.100' data-tmax ="34.730">
+				If you live far out in the country, you'll more likely have
+
+			</p>
+			<p data-tmin = '34.730' data-tmax ="39.430">
+				a dish outside your house, connecting you wirelessly to your closest ISP, or
+			</p>
+			<p data-tmin = '39.430' data-tmax ="41.190">
+				you might also use the telephone system.
+			</p>
+			<p data-tmin = '42.350' data-tmax ="46.300">
+				Whether a wire comes straight from the ISP hookup outside your house, or
+			</p>
+			<p data-tmin = '46.300' data-tmax ="49.270">
+				it travels over radio waves from your roof,
+			</p>
+			<p data-tmin = '49.270' data-tmax ="53.760">
+				the first stop a wire will make once inside your house, is at your modem.
+			</p>
+			<p data-tmin = '53.760' data-tmax ="57.780">
+				A modem is what connects the internet to your network at home.
+			</p>
+			<p data-tmin = '57.780' data-tmax ="59.900">
+				A few common residential modems are DSL or
 			</p>
 		
 	</div>

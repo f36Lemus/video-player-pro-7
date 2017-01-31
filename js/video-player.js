@@ -8,15 +8,19 @@
 	if (supportsVideo) {
         
 		
-
+		var atributo;
+  		var max_atributo;
 
 		var vLength;
 		// Obtain handles to main elements
 		var videoContainer = document.getElementById('videoContainer');
 		var video = document.getElementById('video');
 		var videoControls = document.getElementById('video-controls');
+		var buttonControl = document.getElementById('control-bar');
+		var progress_p = document.getElementById('progress-p');
+		var content = document.getElementById('content');
 		
-
+		var text_content = document.getElementsByTagName('p');
 		// Hide the default controls
 		video.controls = false;
 
@@ -119,9 +123,7 @@
 			video.addEventListener('pause', function() {
 				changeButtonState('playpause');
 			}, false);
-			// video.addEventListener('volumechange', function() {
-			// 	checkVolume();
-			// }, false);
+		
 
 			// Add events for all buttons			
 			playpause.addEventListener('click', function(e) {
@@ -147,15 +149,32 @@
 				progressBar.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
 			});
 
+				// Handling the hiding and showing button controls process
+			videoContainer.addEventListener('mouseover', function() {
+	
+				buttonControl.style.visibility='visible';
+				progress_p.style.paddingTop = '0';
+				content.style.paddingTop = '15px';
+			});
+
+
+		    videoContainer.addEventListener('mouseout', function() {
+
+				buttonControl.style.visibility='hidden';
+			    progress_p.style.paddingTop = '15px';
+			    content.style.paddingTop = '0';
+
+			});
+
 			// React to the user clicking within the progress bar
 			progress.addEventListener('click', function(e) {
 				// Also need to take the parent into account here as .controls now has position:relative
 				//var pos = (e.pageX  - (this.offsetLeft + this.offsetParent.offsetLeft)) / this.offsetWidth;
 				var pos = (e.pageX  - (this.offsetLeft + this.offsetParent.offsetLeft + this.offsetParent.offsetParent.offsetLeft)) / this.offsetWidth;
 				video.currentTime = (pos * video.duration);
-				//console.log(video.currentTime);
-				console.log("mi pos es " + pos);
-				console.log("la duración del video es " + video.currentTime);
+				console.log(video.currentTime);
+		     //    console.log("mi pos es " + pos);
+			    // console.log("la duración del video es " + video.currentTime);
 			});
 
 			video.addEventListener("loadedmetadata", function () {
@@ -169,10 +188,29 @@
   			var vTime = video.currentTime;
   			document.getElementById("curTime").textContent = vTime.toFixed(1);
   			// document.getElementById("vRemaining").textContent = (vLength - vTime).toFixed(1);
+  	
+  		
+  			// Loop for syncing the text with the video speech
+  			for (var i = 0; i < text_content.length; i++ ) {
+            
+	            atributo = Number(text_content[i].getAttribute('data-tmin'));
+	            max_atributo = Number(text_content[i].getAttribute('data-tmax'));
+
+	            // highlighting the the text
+	            if ( vTime >= atributo && vTime < max_atributo ) {
+
+	            	text_content[i].style.color = "red";
+
+	            	} else {
+	            		text_content[i].style.color = "black";
+	            	}
+
+            	}
+
 			}, false);
 
-
-
+			
+	        
 
 			// Listen for fullscreen change events (from other controls, e.g. right clicking on the video itself)
 			document.addEventListener('fullscreenchange', function(e) {

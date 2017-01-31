@@ -45,24 +45,14 @@ figure {
 #content {
 	
 	width: 100%;
-	margin: 20px auto;
-    padding: 15px 20px;
+	margin: 0 auto;
+    padding: 15px 50px;
 	color: #737373;
 	font-size: 0.9em;
 	background-color: #FFFFFF;
 }	
 
-figure:hover .button-controls {
-	visibility: visible;
-	display: block;
-	margin-bottom: 11px;
-	font-size: 10px;
-}
 
-
-figure:hover .controls .progress {
-	/*margin-top: 0px;*/
-}
 
 video {
 	width:100%;
@@ -70,7 +60,7 @@ video {
 
 
 
-/* controls */
+/********* controls ***************/
 .controls, .controls > * {
 	padding:0;
 	margin:0;
@@ -205,9 +195,11 @@ video {
 	background-color:#ffffff;
 }
 .button-controls {
-	/*****$$$$==============*****/                  
-	visibility: hidden;
+	/*****$$$$==============*****/     
+	display: block;
+	visibility: visible;
 	margin-top: 5px;
+	font-size: 10px;
 }
 
 .clearfix::after {
@@ -216,12 +208,6 @@ video {
     clear: both;
   }
 
-/* WebVTT cues */
-/*video::cue { 
-	color:#ffffff;
-	font-size: 15px;
-	line-height: 0px;	
-}*/
 
 
 /****************************** 
